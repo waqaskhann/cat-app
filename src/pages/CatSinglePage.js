@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { AppContext } from '../App';
-import './CatSinglePage.scss';
+import './CatSinglePage.scss'
 
 const CatSinglePage = () => {
   const { lastVisitedWasSingle, setLastVisitedWasSingle } = useContext(AppContext);
@@ -33,13 +33,13 @@ const CatSinglePage = () => {
 
     return (
       <div className="content-wrapper">
-        <Link to={`/`} className="back-btn">Back to Homepage</Link>
+        <Link to={`/cat-app`} className="back-btn">Back to Homepage</Link>
         <div className="cat">
           <figure className="cat__img-wrapper">
-            <img className="cat__img" src={cat.url} alt={`Cat ${cat.id}`} />
+            <img className="cat__img" src={cat.url} alt={`Cat ${cat.id}`} width="300" height="200" />
           </figure>
           <div className="cat__info">
-            <h1>{cat.breeds[0].name}</h1>
+            <h1>Breed: {cat.breeds[0].name}</h1>
             <p className="cat__origin">Origin: {cat.breeds[0].origin}</p>
             <p className="cat__temperament">{cat.breeds[0].temperament}</p>
             <p className="cat__description">{cat.breeds[0].description}</p>

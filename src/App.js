@@ -14,8 +14,8 @@ const App = () => {
     <Router>
       <AppContext.Provider value={{ breed, setBreed, cats, setCats, lastVisitedWasSingle, setLastVisitedWasSingle }}>
         <Routes>
-          <Route exact path="/" element={ <Homepage/> } />
-          <Route path="/:catId" element={ <CatSinglePage/> } />
+          <Route exact path="/cat-app" element={ <Homepage/> } />
+          <Route path="/cat-app/:catId" element={ <CatSinglePage/> } />
         </Routes>
       </AppContext.Provider>
     </Router>

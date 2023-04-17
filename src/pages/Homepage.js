@@ -28,6 +28,7 @@ const Homepage = () => {
     setLastVisitedWasSingle(false)
   }, []);
 
+
   useEffect(() => {
     // Fetch cats based on breed and page number
     const fetchCats = async () => {
@@ -40,7 +41,7 @@ const Homepage = () => {
         setLoadedCats(prevLoadedCats => prevLoadedCats + newCats.length);
         setIsLoading(false);
       } catch (error) {
-        alert('Apologies but we could not load new cats for you at this time! Miau!')            
+        alert("Apologies but we could not load new cats for you at this time! Miau!")        
         setIsLoading(false);
       }
     };
@@ -75,7 +76,7 @@ const Homepage = () => {
         <figure className="card__img-wrapper">
           <img src={cat.url} alt={`Cat ${cat.id}`} className="card__img"/>
         </figure>
-        <Link to={`/${cat.id}`} className="card__cta">View details</Link>
+        <Link to={`/cat-app/${cat.id}`} className="card__cta">View details</Link>
       </div>
     ));
   };
