@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { AppContext } from '../App';
-
+import './CatSinglePage.scss';
 
 const CatSinglePage = () => {
   const { lastVisitedWasSingle, setLastVisitedWasSingle } = useContext(AppContext);
@@ -32,7 +32,7 @@ const CatSinglePage = () => {
     }
 
     return (
-      <div>
+      <div className="content-wrapper">
         <Link to={`/`} className="back-btn">Back to Homepage</Link>
         <div className="cat">
           <figure className="cat__img-wrapper">

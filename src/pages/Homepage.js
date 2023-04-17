@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { AppContext } from '../App';
+import './Homepage.scss';
 
 const Homepage = () => {
   const { breed, setBreed } = useContext(AppContext);
@@ -27,7 +28,6 @@ const Homepage = () => {
     setLastVisitedWasSingle(false)
   }, []);
 
-
   useEffect(() => {
     // Fetch cats based on breed and page number
     const fetchCats = async () => {
@@ -40,7 +40,7 @@ const Homepage = () => {
         setLoadedCats(prevLoadedCats => prevLoadedCats + newCats.length);
         setIsLoading(false);
       } catch (error) {
-        alert("Apologies but we could not load new cats for you at this time! Miau!")        
+        alert('Apologies but we could not load new cats for you at this time! Miau!')            
         setIsLoading(false);
       }
     };
